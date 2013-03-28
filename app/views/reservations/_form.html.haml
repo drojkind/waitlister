@@ -1,0 +1,14 @@
+.row
+  .large-3.columns
+    = form_for @reservation, :remote => true do |f|
+      = f.label :partysize
+      = f.text_field :partysize, :autofocus => true
+      = f.label :date
+      = f.date_field :date
+      = f.label :est_wait
+      = f.text_field :est_wat
+      = f.label :act_wait
+      = f.text_field :act_wait
+      = button_to_function('Cancel', 'cancel_user_form()',:class => 'button radius tiny alert')
+      = f.submit 'Create Reservation', :id => 'create_reservayion_button', :class => 'button radius tiny'
+  .large-9.columns
