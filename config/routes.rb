@@ -4,5 +4,5 @@ R20130326Waitlist::Application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
   resources :reservations, :only => [:index, :new, :create]
-  resources :users
+  resources :users, :guests
 end

@@ -8,6 +8,7 @@ gem 'nokogiri'
 gem 'httparty'
 gem 'twilio-ruby'
 gem 'thin'
+gem 'bcrypt-ruby'
 
 group :assets do
   gem 'sass-rails'

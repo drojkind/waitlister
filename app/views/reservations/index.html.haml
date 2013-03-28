@@ -1,4 +1,5 @@
-/ -if @auth.present?
-%section.reservation
-  =link_to("Make a Reservation", reservations_path, remote:true)
+%br
+- if @auth.present?
+  %section.reservation
+    =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius")
 #form

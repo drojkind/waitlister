@@ -1,5 +1,6 @@
+%br
 .row
-  .large-3.columns
+  .large-12.columns
     = form_tag '/login', :remote => true do
       = label_tag :email
       = text_field_tag :email, nil, :autofocus => true
@@ -7,4 +8,3 @@
       = password_field_tag :password
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = submit_tag 'Start The Queue', :class => 'button tiny radius success'
-  .large-9.columns
