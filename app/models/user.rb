@@ -12,7 +12,8 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :password, :password_confirmation, :email
-  has_mamy :reservations
+  attr_accessible :name, :password, :password_confirmation, :email, :address
+  has_many :reservations
   has_many :guests
+  has_secure_password
 end

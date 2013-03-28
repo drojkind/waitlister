@@ -1,0 +1,16 @@
+%br
+.row
+  .large-12.columns
+    = form_tag '/users/new', :remote => true do
+      = label_tag :name
+      = text_field_tag :name, nil, :autofocus => true
+      = label_tag :email
+      = text_field_tag :email
+      = label_tag :password
+      = password_field_tag :password
+      = label_tag :password_confirmation
+      = password_field_tag :password_confirmation
+      = label_tag :address
+      = text_field_tag :address
+      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+      = submit_tag 'Create New User', :class => 'button tiny radius success'

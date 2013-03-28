@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
   end
   def new
     @reservation = Reservation.new
+    @guest = Guest.new
   end
   def create
     @reservation = Reservation.create(params[:reservation])
