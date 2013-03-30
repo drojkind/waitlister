@@ -15,8 +15,8 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
-    # phone = params[:phone]
     name = params[:first]
+
     body = params[:body]
     reservation = Reservation.where(:name => name).first
     client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
