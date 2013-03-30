@@ -1,4 +1,4 @@
-.row
+.row.r_form
   .small-3.columns
     = form_for @reservation, :remote => true do |f|
       = f.label :name
@@ -13,5 +13,3 @@
       = f.text_field :est_wait
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = f.submit 'Create Reservation', :id => 'create_reservation_button', :class => 'button radius tiny'
-
-

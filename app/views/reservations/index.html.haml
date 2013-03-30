@@ -5,55 +5,35 @@
 #form
 #waitlist
 
-/ .small-3.columns
-/   %ol
-/     - @guests.each do |guest|
-/       %li
-/         %form{:action => "/guests/sendtext", :method => "post"}
-/           %li= guest.name
-/           %input{:name => "first", :type => "hidden", :value => guest.name}
-/             %li
-/               %input{:name => "body", :type => "text"}/
-/             %li
-/               %button Send Text
-%table
-  %tr
-    %th{:width => "150"} Name
-    %th{:width => "150"} Telephone Number
-    %th{:width => "150"} Estimated Wait
-    %th{:width => "30"} Wait
-    %th{:width => "75"} Cancel
-    %th{:width => "150"} Message
-    %th Send Text
-  - @reservations.each do |r|
-    %tr
-      %td= r.name
-      %td= r.name
-      %td= r.phone
-      %td= r.est_wait
-      %td= r.est_wait
-      %td= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
-      %td.tablehead
-        = form_tag(sendtext_reservations_path)
-        = text_field_tag 'body'
-        = hidden_field_tag :phone, r.phone
-      %td.tablehead
-        = submit_tag
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.small-3.columns
+  %ol
+    - @reservations.each do |reservation|
+      %li
+        %form{:action => "/reservations/sendtext", :method => "post"}
+          = reservation.name
+          %input{:name => "first", :type => "hidden", :value => reservation.name}
+          %input{:name => "body", :type => "text"}
+          %button Send Text
+/ %table
+/   %tr
+/     %th{:width => "150"} Name
+/     %th{:width => "150"} Telephone Number
+/     %th{:width => "150"} Estimated Wait
+/     %th{:width => "30"} Wait
+/     %th{:width => "75"} Cancel
+/     %th{:width => "150"} Message
+/     %th Send Text
+/   - @reservations.each do |r|
+/     %tr
+/       %td.tablehead= r.name
+/       %td.tablehead= r.phone
+/       %td.tablehead= r.est_wait
+/       %td.tablehead= r.est_wait
+/       %td.tablehead= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+/       %td.tablehead
+/         = form_tag(sendtext_reservations_path)
+/         = hidden_field_tag :phone, r.phone
+/       %td.tablehead
+/         = submit_tag 'Text', :class => 'button radius tiny'
 

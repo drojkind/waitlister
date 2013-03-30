@@ -15,12 +15,12 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
-    phone = params[:phone]
-    # name = params[:first]
+    name = params[:first]
+
     body = params[:body]
-    # reservation = Reservation.where(:phone => phone).first
+    reservation = Reservation.where(:name => name).first
     client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
-    client.account.sms.messages.create(:from => '+17186739417', :to => phone, :body => body)
+    client.account.sms.messages.create(:from => '+17186739417', :to => reservation.phone, :body => body)
     redirect_to(reservations_path)
   end
 end
