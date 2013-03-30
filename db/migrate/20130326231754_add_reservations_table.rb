@@ -1,10 +1,13 @@
 class AddReservationsTable < ActiveRecord::Migration
   def change
     create_table :reservations do |t|
-      t.date :date
+      t.string :name
+      t.string :phone
+      t.string :date
+      t.string :day
       t.integer :party_size
-      t.time :est_wait
-      t.time :act_wait
+      t.integer :est_wait
+      t.integer :act_wait
       t.timestamps
     end
   end
