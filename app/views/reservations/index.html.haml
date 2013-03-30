@@ -3,3 +3,15 @@
   %section.reservation
     =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius")
 #form
+
+/ .small-3.columns
+/   %ol
+/     - @guests.each do |guest|
+/       %li
+/         %form{:action => "/guests/sendtext", :method => "post"}
+/           %li= guest.name
+/           %input{:name => "first", :type => "hidden", :value => guest.name}
+/             %li
+/               %input{:name => "body", :type => "text"}/
+/             %li
+/               %button Send Text

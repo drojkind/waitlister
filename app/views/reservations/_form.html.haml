@@ -14,7 +14,19 @@
       = f.text_field :est_wait
       = f.label :act_wait
       = f.text_field :act_wait
-      = button_to_function('Cancel', 'cancel_user_form()',:class => 'button radius tiny alert')
+      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = f.submit 'Create Reservation', :id => 'create_reservayion_button', :class => 'button radius tiny'
   .small-9.columns
+    %ol
+  - @guests.each do |guest|
+    %li
+      %ul
+        %form{:action => "/guests/sendtext", :method => "post"}
+          %li= guest.name
+          %li= guest.phone
+          %input{:name => "first", :type => "hidden", :value => guest.name}
+            %li
+              %input{:name => "body", :type => "text"}/
+            %li
+              %button Send Text
 
