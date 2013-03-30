@@ -27,14 +27,33 @@
     %th Send Text
   - @reservations.each do |r|
     %tr
-      %td.tablehead= r.name
-      %td.tablehead= r.phone
-      %td.tablehead= r.est_wait
-      %td.tablehead= r.est_wait
-      %td.tablehead= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+      %td= r.name
+      %td= r.name
+      %td= r.phone
+      %td= r.est_wait
+      %td= r.est_wait
+      %td= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       %td.tablehead
         = form_tag(sendtext_reservations_path)
         = text_field_tag 'body'
         = hidden_field_tag :phone, r.phone
       %td.tablehead
         = submit_tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

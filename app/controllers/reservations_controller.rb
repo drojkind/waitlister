@@ -15,7 +15,6 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
-    binding.pry
     phone = params[:phone]
     # name = params[:first]
     body = params[:body]

@@ -13,17 +13,5 @@
       = f.text_field :est_wait
       = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
       = f.submit 'Create Reservation', :id => 'create_reservation_button', :class => 'button radius tiny'
-  / .small-9.columns
-  /   %ol
-  / - @reservations.each do |reservation|
-  /   %li
-  /     %ul
-  /       %form{:action => "/reservations/sendtext", :method => "post"}
-  /         %li= reservation.name
-  /         %li= reservation.phone
-  /         %input{:name => "first", :type => "hidden", :value => reservation.name}
-  /           %li
-  /             %input{:name => "body", :type => "text"}/
-  /           %li
-  /             %button Send Text
+
 
