@@ -1,11 +1,10 @@
 .row
   .small-3.columns
-    = form_for @guest, :remote => true do |f|
+    = form_for @reservation, :remote => true do |f|
       = f.label :name
       = f.text_field :name
       = f.label :phone
       = f.text_field :phone
-    = form_for @reservation, :remote => true do |f|
       = f.label :party_size
       = f.text_field :party_size, :autofocus => true
       = f.label :date
@@ -16,13 +15,13 @@
       = f.submit 'Create Reservation', :id => 'create_reservayion_button', :class => 'button radius tiny'
   .small-9.columns
     %ol
-  - @guests.each do |guest|
+  - @reservations.each do |reservation|
     %li
       %ul
-        %form{:action => "/guests/sendtext", :method => "post"}
-          %li= guest.name
-          %li= guest.phone
-          %input{:name => "first", :type => "hidden", :value => guest.name}
+        %form{:action => "/reservations/sendtext", :method => "post"}
+          %li= reservation.name
+          %li= reservation.phone
+          %input{:name => "first", :type => "hidden", :value => reservation.name}
             %li
               %input{:name => "body", :type => "text"}/
             %li
