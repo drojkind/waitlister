@@ -1,1 +1,1 @@
-$('#form').empty().after('<p>You have successfully made a reservation!</p>');
+$('#form').empty().after('<p>You have successfully made a reservation!</p>').append('<%=j render(:partial => 'reservations') %>');
