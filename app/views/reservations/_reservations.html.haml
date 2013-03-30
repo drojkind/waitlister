@@ -1,24 +1,16 @@
 %table
+  %tr
+    %th{:width => "150"} Name
+    %th{:width => "150"} Telephone Number
+    %th{:width => "150"} Estimated Wait
+    %th{:width => "150"} Wait
+    %th{:width => "150"} Cancel
+    %th{:width => "150"} Text
+  - @reservations.each do |r|
     %tr
-      %th{:width => "150"} Name
-      %th{:width => "150"} Telephone Number
-      %th{:width => "150"} Estimated Wait
-      %th{:width => "150"} Wait
-      %th{:width => "150"} Cancel
-      %th{:width => "150"} Text
-  %tbody
-    %tr
-      %td Content Goes Here
-      %td This is longer content Donec id elit non mi porta gravida at eget metus.
-      %td Content Goes Here
-      %td Content Goes Here
-    %tr
-      %td Content Goes Here
-      %td This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
-      %td Content Goes Here
-      %td Content Goes Here
-    %tr
-      %td Content Goes Here
-      %td This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
-      %td Content Goes Here
-      %td Content Goes Here
+      %td= r.name
+      %td= r.phone
+      %td= r.est_wait
+      %td= r.est_wait
+      %td= button_to_function('Cancle','#' )
+      %td= button_to_function('Cancle','#' )

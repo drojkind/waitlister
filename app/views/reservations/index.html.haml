@@ -3,6 +3,7 @@
   %section.reservation
     =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius")
 #form
+#waitlist
 
 / .small-3.columns
 /   %ol
@@ -15,3 +16,23 @@
 /               %input{:name => "body", :type => "text"}/
 /             %li
 /               %button Send Text
+%table
+  %tr
+    %th.tablehead{:width => "150"} Name
+    %th.tablehead{:width => "150"} Telephone Number
+    %th.tablehead{:width => "150"} Estimated Wait
+    %th.tablehead{:width => "30"} Wait
+    %th.tablehead{:width => "75"} Cancel
+    %th.tablehead{:width => "150"} Message
+    %th.tablehead{:width => "75"} Send
+  - @reservations.each do |r|
+    %tr
+      %td= r.name
+      %td= r.phone
+      %td= r.est_wait
+      %td= r.est_wait
+      %td= link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+      %td
+        %input{:name => "body", :type => "text"}/
+      %td
+        = button_to('Text', sendtext_reservations_path, :method => "post", class: "button radius success tiny")
