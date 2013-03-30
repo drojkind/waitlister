@@ -11,6 +11,8 @@
       %li
         %form{:action => "/reservations/sendtext", :method => "post"}
           = reservation.name
+          = reservation.phone
+          = reservation.est_wait
           %input{:name => "first", :type => "hidden", :value => reservation.name}
           %input{:name => "body", :type => "text"}
           %button Send Text
