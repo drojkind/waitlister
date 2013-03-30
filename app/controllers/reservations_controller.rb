@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @reservations = Reservation.all
     @reservation = Reservation.create(params[:reservation])
   end
 
