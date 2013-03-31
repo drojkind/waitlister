@@ -1,10 +1,13 @@
 %br
 .row
-  .large-12.columns
-    = form_tag '/login', :remote => true do
-      = label_tag :email
-      = text_field_tag :email, nil, :autofocus => true
-      = label_tag :password
-      = password_field_tag :password
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
-      = submit_tag 'Start The Queue', :class => 'button tiny radius success'
+  .large-1.columns
+  .large-8.large-offset-3.columns
+    %fieldset
+      %legend Let's Waitlist!
+      = form_tag '/login', :remote => true do
+        = label_tag :email
+        = text_field_tag :email, nil, :autofocus => true
+        = label_tag :password
+        = password_field_tag :password
+        = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
+        = submit_tag 'Start The Queue', :class => 'button tiny radius success'

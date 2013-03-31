@@ -1,1 +1,2 @@
-$('#waitlist').empty().after('<p>You have successfully made a reservation!</p>').append('<%=j render(:partial => 'reservations') %>');
+$('#form').empty().after('<p>You have successfully made a reservation!</p>').append('<%=j render(:partial => 'reservations') %>');
+$('#form + p').fadeOut(3000, function(){ $('#form + p').remove(); });
