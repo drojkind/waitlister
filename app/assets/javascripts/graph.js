@@ -1,5 +1,4 @@
 $(function(){
-  $('#form').on('click', '#textbutton', displayseated);
 
 });
 
@@ -28,20 +27,6 @@ new Morris.Line({
 });
 
 }
-
-function displayseated()
-{
-  $.ajax(
-        dataType: "script"
-        type: "post"
-        url: "/reservations"
-        data:
-          authenticity_token: token
-      ).done()
-     });
-}
-
-
 
 
 

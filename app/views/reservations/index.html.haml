@@ -3,54 +3,64 @@
   %section.reservation
     =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius tiny")
 #form
-#seatedlist
 
+%h2 Waiting
 .row
-  .small-6.columns
-    #form2
-      %table
-        - @reservations.each do |reservation|
-          / %tr{:id => "reservation_#{reservation.id}"}
-          = content_tag_for(:tr, reservation) do
-            =form_tag sendtext_reservation_path(reservation), :remote => true do
-              %td
-                = label_tag reservation.name
-              %td
-                = label_tag reservation.phone
-              %td
-                = label_tag reservation.est_wait
-              / %input{:name => "first", :type => "hidden", :value => reservation.name}
-              %td
-                = hidden_field_tag('first', reservation.name)
-              %td
-                = hidden_field_tag('phone', reservation.phone)
-              / %input{:name => "body", :type => "text"}
-              %td
-                = text_area_tag('body', nil, :rows => 3 )
-              / %button{:id => 'textbutton'} Send Text
-              %td
-                = submit_tag('Send Text')
+  .large-12.small-12.columns
+    #reservations
+      = render(:partial => 'reservations')
+%h2 Seated
+.row
+  .large-12.small-12.columns
+    #texted
+      = render(:partial => 'texted')
 
-.small-6.columns
-  %table
-    - @reservations.each do |reservation|
-      / %tr{:id => "reservation_#{reservation.id}"}
-      = content_tag_for(:tr, reservation) do
-        =form_tag sendtext_reservation_path(reservation), :remote => true do
-          %td
-            = label_tag reservation.name
-          %td
-            = label_tag reservation.phone
-          %td
-            = label_tag reservation.est_wait
-          / %input{:name => "first", :type => "hidden", :value => reservation.name}
-          %td
-            = hidden_field_tag('first', reservation.name)
-          %td
-            = hidden_field_tag('phone', reservation.phone)
-          / %input{:name => "body", :type => "text"}
-          %td
-            = text_area_tag('body', nil, :rows => 3 )
-          / %button{:id => 'textbutton'} Send Text
-          %td
-            = submit_tag('Send Text')
+/ .row
+/   .small-6.columns
+/     #form2
+/       %table
+/         - @reservations.each do |reservation|
+/           / %tr{:id => "reservation_#{reservation.id}"}
+/           = content_tag_for(:tr, reservation) do
+/             =form_tag sendtext_reservation_path(reservation), :remote => true do
+/               %td
+/                 = label_tag reservation.name
+/               %td
+/                 = label_tag reservation.phone
+/               %td
+/                 = label_tag reservation.est_wait
+/               / %input{:name => "first", :type => "hidden", :value => reservation.name}
+/               %td
+/                 = hidden_field_tag('first', reservation.name)
+/               %td
+/                 = hidden_field_tag('phone', reservation.phone)
+/               / %input{:name => "body", :type => "text"}
+/               %td
+/                 = text_area_tag('body', nil, :rows => 3 )
+/               / %button{:id => 'textbutton'} Send Text
+/               %td
+/                 = submit_tag('Send Text')
+
+/ .small-6.columns
+/   %table
+/     - @reservations.each do |reservation|
+/       / %tr{:id => "reservation_#{reservation.id}"}
+/       = content_tag_for(:tr, reservation) do
+/         =form_tag sendtext_reservation_path(reservation), :remote => true do
+/           %td
+/             = label_tag reservation.name
+/           %td
+/             = label_tag reservation.phone
+/           %td
+/             = label_tag reservation.est_wait
+/           / %input{:name => "first", :type => "hidden", :value => reservation.name}
+/           %td
+/             = hidden_field_tag('first', reservation.name)
+/           %td
+/             = hidden_field_tag('phone', reservation.phone)
+/           / %input{:name => "body", :type => "text"}
+/           %td
+/             = text_area_tag('body', nil, :rows => 3 )
+/           / %button{:id => 'textbutton'} Send Text
+/           %td
+/             = submit_tag('Send Text')
