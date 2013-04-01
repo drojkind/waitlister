@@ -9,3 +9,4 @@
 //= require 'underscore-min.js'
 //= require 'accounting.min.js'
 //= require 'graph.js'
+//= require 'moment-min.js'
