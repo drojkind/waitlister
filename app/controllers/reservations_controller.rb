@@ -10,8 +10,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservations = Reservation.all
     @reservation = Reservation.create(params[:reservation])
+    @reservations = Reservation.all
+    binding.pry
   end
 
   def sendtext
@@ -19,7 +20,7 @@ class ReservationsController < ApplicationController
     body = params[:body]
     reservation = Reservation.where(:name => name).first
     client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
-    client.account.sms.messages.create(:from => '17186739417', :to => reservation.phone, :body => body)
+    client.account.sms.messages.create(:from => '17324126143', :to => reservation.phone, :body => body)
     # redirect_to(reservations_path)
     # render :js => 'sendtext', :test => 'heyo'
   end

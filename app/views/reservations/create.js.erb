@@ -1,2 +1,2 @@
-$('#form2').empty().after('<p>You have successfully made a reservation!</p>').append('<%=j render(:partial => 'form') %>');
-$('#form + p').fadeOut(3000, function(){ $('#form + p').remove(); });
+$('#form2').empty().append('<%=j render(:partial => 'reservations') %>');
+// $('#form2 + p').fadeOut(3000, function(){ $('#form2 + p').remove(); });
