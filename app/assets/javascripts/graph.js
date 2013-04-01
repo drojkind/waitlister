@@ -1,5 +1,5 @@
 $(function(){
-
+  $('#form').on('click', '#textbutton', displayseated);
 });
 
 function morris()
@@ -27,3 +27,35 @@ new Morris.Line({
 });
 
 }
+
+function displayseated()
+{
+  $.ajax(
+        dataType: "script"
+        type: "post"
+        url: "/reservations"
+        data:
+          authenticity_token: token
+          user_id: user_id
+          game_id: game_id
+      ).done()
+     });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
