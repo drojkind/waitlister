@@ -12,7 +12,6 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.create(params[:reservation])
     @reservations = Reservation.all
-    binding.pry
   end
 
   def sendtext
