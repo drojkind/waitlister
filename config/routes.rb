@@ -5,7 +5,7 @@ R20130326Waitlist::Application.routes.draw do
   delete '/login' => 'session#destroy'
   resources :users
   resources :reservations do
-    collection do
+    member do
       post 'sendtext'
     end
   end
