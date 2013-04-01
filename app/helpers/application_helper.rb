@@ -4,7 +4,7 @@ module ApplicationHelper
 
     if @auth.present?
       nav = "<li>#{link_to("Reservations", reservations_path)}</li>"
-      nav += "<li>#{link_to("Stats", users_path)}</li>"
+      nav += "<li>#{link_to("Stats", timechart_users_path)}</li>"
       nav += "<li>#{link_to(@auth.email, login_path, :method => :delete, remote: true)}</li>"
 
     else

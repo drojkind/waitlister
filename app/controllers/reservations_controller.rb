@@ -23,4 +23,5 @@ class ReservationsController < ApplicationController
     # redirect_to(reservations_path)
     # render :js => 'sendtext', :test => 'heyo'
   end
+
 end
