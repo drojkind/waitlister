@@ -6,11 +6,9 @@ class UsersController < ApplicationController
 
   def timechart
     r = Reservation.all
-    @data = r.map{ |i| {:est_wait => i.est_wait, :act_wait => i.act_wait} }
-
     respond_to do |format|
       format.html
-      format.js { render :json => @data}
+      format.js { render :json => r}
     end
   end
 

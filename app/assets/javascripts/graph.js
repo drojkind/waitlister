@@ -25,7 +25,7 @@ function show_chart()
 {
 
   $.ajax({
-      dataType: 'script',
+      dataType: 'json',
       type: "get",
       url: "/users/timechart/"
   }).done(process_activity);
@@ -41,8 +41,8 @@ function process_activity(timedata)
   Morris.Line({
     element: 'chart',
     data: timedata,
-    xkey: 'est_time',
-    ykeys: ['act_time'],
+    xkey: 'est_wait',
+    ykeys: ['act_wait'],
     labels: ['Value']
   });
 }
