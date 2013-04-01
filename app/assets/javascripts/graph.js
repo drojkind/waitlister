@@ -1,5 +1,6 @@
 $(function(){
   $('#form').on('click', '#textbutton', displayseated);
+
 });
 
 function morris()

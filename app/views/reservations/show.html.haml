@@ -1,0 +1,16 @@
+%table
+  %tr
+    %th{:width => "150"} Name
+    %th{:width => "150"} Telephone Number
+    %th{:width => "150"} Estimated Wait
+    %th{:width => "150"} Wait
+    %th{:width => "150"} Cancel
+    %th{:width => "150"} Text
+  - @reservations.each do |r|
+    %tr
+      %td= r.name
+      %td= r.phone
+      %td= r.est_wait
+      %td= r.est_wait
+      %td= button_to_function('Cancle','#' )
+      %td= button_to_function('Cancle','#' )
