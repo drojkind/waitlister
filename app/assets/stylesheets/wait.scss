@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Fascinate|Carme);
+
 body
 {
 background-image:url('natural_paper.png');
@@ -6,13 +8,13 @@ background-color:#cccccc;
 
 .graph
 {
-  height: 500px;
+  height: 600px;
 }
 
 table
 {
   min-width: 970px;
-  font-size: 22px;
+  font-size: 18px;
   border: solid black 4px;
 
 }
@@ -21,4 +23,37 @@ table
 {
   border: solid black 4px;
 }
+
+#title
+{
+  font-family: 'Fascinate', cursive;
+  font-size: 25px;
+}
+
+*
+{
+  font-family: 'Carme', cursive;
+}
+
+h1
+{
+  font-family: 'Carme', cursive;
+}
+
+h2
+{
+  font-family: 'Carme', cursive;
+}
+
+#reservations
+{
+  text-align: center;
+}
+
+#texted
+{
+  text-align: center;
+}
+
+
 

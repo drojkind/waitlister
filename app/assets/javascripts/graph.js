@@ -35,7 +35,6 @@ function show_chart()
 
 function process_activity(timedata)
 {
-
   $('#chart').empty();
 
   Morris.Line({
@@ -43,7 +42,7 @@ function process_activity(timedata)
     data: timedata,
     xkey: 'est_wait',
     ykeys: ['act_wait'],
-    labels: ['Value']
+    labels: ['Actual Wait']
   });
 }
 
