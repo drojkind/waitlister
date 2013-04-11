@@ -5,9 +5,9 @@ class AddReservationsTable < ActiveRecord::Migration
       t.string :phone
       t.string :date
       t.string :day
-      t.integer :party_size
-      t.integer :est_wait
-      t.integer :act_wait
+      t.integer :party_size, :default => false
+      t.integer :est_wait, :default => false
+      t.integer :act_wait, :default => false
       t.timestamps
     end
   end

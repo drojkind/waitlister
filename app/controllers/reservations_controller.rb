@@ -2,6 +2,9 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
+    @reservationswaiting= Reservation.waiting
+    @reservationstexted= Reservation.texted
+    @reservationsseated= Reservation.seated
   end
 
   def new

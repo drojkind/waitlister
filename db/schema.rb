@@ -11,18 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410231750) do
+ActiveRecord::Schema.define(:version => 20130410235528) do
 
   create_table "reservations", :force => true do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "date"
     t.string   "day"
-    t.integer  "party_size"
-    t.integer  "est_wait"
-    t.integer  "act_wait"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "party_size", :default => 0
+    t.integer  "est_wait",   :default => 0
+    t.integer  "act_wait",   :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.boolean  "is_waiting"
+    t.boolean  "is_texted"
+    t.boolean  "is_seated"
   end
 
   create_table "users", :force => true do |t|
@@ -32,9 +35,6 @@ ActiveRecord::Schema.define(:version => 20130410231750) do
     t.text     "address"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.boolean  "is_waiting"
-    t.boolean  "is_texted"
-    t.boolean  "is_seated"
   end
 
 end
