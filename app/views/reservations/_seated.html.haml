@@ -2,9 +2,7 @@
   %th Name
   %th Phone
   %th Wait
-  %th Msg
-  %th Text
-  - @reservationstexted.each do |reservation|
+  - @reservationsseated.each do |reservation|
     / %tr{:id => "reservation_#{reservation.id}"}
     = content_tag_for(:tr, reservation) do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
@@ -16,8 +14,3 @@
           = label_tag reservation.est_wait
           = hidden_field_tag('phone', reservation.phone)
           = hidden_field_tag('first', reservation.name)
-        %td
-          = text_area_tag('body', nil, :rows => 3 )
-        / %button{:id => 'textbutton'} Send Text
-        %td
-          = submit_tag('Send Text')

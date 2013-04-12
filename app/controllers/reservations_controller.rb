@@ -2,9 +2,10 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
-    @reservationswaiting= Reservation.waiting
-    @reservationstexted= Reservation.texted
-    @reservationsseated= Reservation.seated
+    @reservationswaiting= Reservation.where(:is_waiting => true)
+    #@reservationswaiting= Reservation.waiting  why doesn't this work--- from scope?
+    @reservationstexted= Reservation.where(:is_texted => true)
+    @reservationsseated= Reservation.where(:is_seated => true)
   end
 
   def new
@@ -18,9 +19,11 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
+    binding.pry
     name = params[:first]
     body = params[:body]
     reservation = Reservation.where(:name => name).first
+    reservation.is_texted: = true
     client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
     client.account.sms.messages.create(:from => '17324126143', :to => reservation.phone, :body => body)
     # render :js => 'sendtext', :test => 'heyo'
