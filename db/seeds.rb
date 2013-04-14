@@ -12,3 +12,6 @@ r4 = Reservation.create(name: 'jill', phone: '5164747688', date: '2013-03-22', d
 r5 = Reservation.create(name: 'liz', phone: '5164747688', date: '2013-03-23', day: 'sat', party_size: 4, est_wait: 40, act_wait: 38, is_texted: true)
 r6 = Reservation.create(name: 'sean', phone: '5164747688', date: '2013-03-23', day: 'sat', party_size: 4, est_wait: 35, act_wait: 30, is_seated: true)
 r7 = Reservation.create(name: 'tony', phone: '5164747688', date: '2013-03-23', day: 'sat', party_size: 3, est_wait: 30, act_wait: 27, is_seated: true)
+
+u1.reservations << r1 << r2 << r3 << r4 << r5 << r6 << r7
+u1.save

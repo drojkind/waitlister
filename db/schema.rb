@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130410235528) do
     t.integer  "party_size", :default => 0
     t.integer  "est_wait",   :default => 0
     t.integer  "act_wait",   :default => 0
+    t.integer  "user_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.boolean  "is_waiting"
