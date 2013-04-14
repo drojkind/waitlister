@@ -8,6 +8,7 @@ class AddReservationsTable < ActiveRecord::Migration
       t.integer :party_size, :default => false
       t.integer :est_wait, :default => false
       t.integer :act_wait, :default => false
+      t.integer :user_id
       t.timestamps
     end
   end
