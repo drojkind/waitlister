@@ -6,6 +6,8 @@ R20130326Waitlist::Application.routes.draw do
   resources :users do
     collection do
       get 'timechart'
+      get 'waiting'
+      get 'seated'
     end
   end
 

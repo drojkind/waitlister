@@ -20,4 +20,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def waiting
+    @reservationswaiting= Reservation.where(:is_waiting => true)
+  end
+
+  def seated
+    @reservationsseated= Reservation.where(:is_seated => true)
+  end
+
 end

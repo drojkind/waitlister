@@ -5,7 +5,6 @@
   %th Msg
   %th Text
   - @reservationstexted.each do |reservation|
-    / %tr{:id => "reservation_#{reservation.id}"}
     = content_tag_for(:tr, reservation) do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
         %td

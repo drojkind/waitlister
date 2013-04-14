@@ -1,21 +1,37 @@
+%div.tabswitch
+  =link_to('Waiting', waiting_users_path, :remote => true, :class => 'button radius success')
+  =link_to('Seated', seated_users_path, :remote => true, :class => 'button radius success')
+#forms
+
 %br
 - if @auth.present?
   %section.reservation
     =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius tiny")
 #form
 
-%h2 Waiting
-.row
-  .large-12.small-12.columns
-    #reservations
-      = render(:partial => 'reservations')
-%h2 Texted
-.row
-  .large-12.small-12.columns
-    #texted
-      = render(:partial => 'texted')
-%h2 Seated
-.row
-  .large-12.small-12.columns
-    #texted
-      = render(:partial => 'seated')
+%div.info_nav
+  info
+
+%div{"data-magellan-expedition" => "fixed"}
+  %ul.sub-nav
+    %li{"data-magellan-arrival" => "build"}
+      %a{:href => "#build"} Build with HTML
+    %li{"data-magellan-arrival" => "js"}
+      %a{:href => "#js"} Arrival 2
+
+
+/ %h2 Waiting
+/ .row
+/   .large-12.small-12.columns
+/     #reservations
+/       = render(:partial => 'reservations')
+/ %h2 Texted
+/ .row
+/   .large-12.small-12.columns
+/     #texted
+/       = render(:partial => 'texted')
+/ %h2 Seated
+/ .row
+/   .large-12.small-12.columns
+/     #texted
+/       = render(:partial => 'seated')

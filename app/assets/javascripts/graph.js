@@ -1,8 +1,16 @@
 $(function(){
   show_chart();
+  $('#forms').on('click','input[type=submit]', stop_timer_and_submit);
+
 });
 var datetime = null;
 var date = null;
+
+function stop_timer_and_submit(e)
+{
+  e.preventDefault();
+}
+
 
 
 var datetime_update = function() {

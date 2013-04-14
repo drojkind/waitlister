@@ -3,7 +3,6 @@
   %th Phone
   %th Wait
   - @reservationsseated.each do |reservation|
-    / %tr{:id => "reservation_#{reservation.id}"}
     = content_tag_for(:tr, reservation) do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
         %td
