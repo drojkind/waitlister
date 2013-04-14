@@ -12,9 +12,9 @@ var date = null;
 
 
 var datetime_update = function() {
-  // date = moment(new Date());
-  // datetime.html(date.format('mm ss'));
   $.each($('.datetime:not(.stopped)'), function(i, el){
+  // $.each($('.datetime.not(.stopped)'), function(i, el){
+
     var created = Date.parse($(this).data('created'));
     var moment_created = moment(created).format("dddd, MMMM Do YYYY, h:mm:ss a");
     $(el).html(moment(created).fromNow(false));
@@ -23,9 +23,10 @@ var datetime_update = function() {
 
 function stop_timer_and_submit(e)
 {
+
   e.preventDefault();
   // add stopped class to the td
-  // $('input[type=submit]')= :class => 'stopped'
+  $('.reservation').children().addClass('stopped');
   $(this).parent().siblings('form').submit();
 }
 
