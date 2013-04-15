@@ -15,6 +15,15 @@ class User < ActiveRecord::Base
   attr_accessible :name, :password, :password_confirmation, :email, :address
   has_many :reservations
   has_secure_password
+
+  def total_people
+    Reservation.all.map(&:party_size).reduce(:+)
+  end
+
+  def total_parties
+    Reservation.all.count
+  end
+
 end
 
 #User.all is like a scope with no requirements

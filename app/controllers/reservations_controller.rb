@@ -15,7 +15,11 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.create(params[:reservation])
-    @reservations = Reservation.all
+    @reservation.is_waiting = true
+    @auth.reservations << @reservation
+    @auth.save
+    @reservations = @auth.reservations
+    @reservationswaiting= @auth.reservations.where(:is_waiting => true)
   end
 
   def sendtext
