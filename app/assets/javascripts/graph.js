@@ -21,9 +21,9 @@ var datetime_update = function() {
 
 function stop_timer_and_submit(e)
 {
-
   e.preventDefault();
   $(this).parent().siblings().children('.datetime').addClass('stopped');
+  $(this).parent().parent().addClass('notified');
   $(this).parent().siblings('form').submit();
 }
 
