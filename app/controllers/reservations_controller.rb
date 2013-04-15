@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = @auth.reservations
-    @reservationswaiting= @auth.reservations.where(:is_waiting => true)
+    @reservationswaiting= @auth.reservations.where(:is_waiting => true) && @auth.reservations.where(:is_texted => true)
     #@reservationswaiting= Reservation.waiting  why doesn't this work--- from scope?
     @reservationstexted= @auth.reservations.where(:is_texted => true)
     @reservationsseated= @auth.reservations.where(:is_seated => true)
