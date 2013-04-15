@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def seated
-    @reservationsseated= Reservation.where(:is_seated => true)
+    @reservationsseated= @auth.reservations.where(:is_seated => true)
   end
 
 end
