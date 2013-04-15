@@ -2,6 +2,7 @@
   =link_to('Waiting', waiting_users_path, :remote => true, :class => 'button radius success')
   =link_to('Seated', seated_users_path, :remote => true, :class => 'button radius success')
 #forms
+  = render(:partial => 'reservations/reservations')
 
 %br
 - if @auth.present?
@@ -9,8 +10,8 @@
     =link_to("Make a Reservation", new_reservation_path, remote: true, class: "button radius tiny")
 #form
 
-%div.info_nav
-  info
+#info_nav.info_nav
+  = render(:partial => 'reservations/info_nav')
 
 %div{"data-magellan-expedition" => "fixed"}
   %ul.sub-nav
