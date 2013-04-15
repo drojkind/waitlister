@@ -12,7 +12,7 @@ var datetime = null;
 var date = null;
 
 var datetime_update = function() {
-  $.each($('.datetime:not(.stopped)'), function(i, el){
+  $.each($('tr:not(.notified) .datetime'), function(i, el){
     var created = Date.parse($(this).data('created'));
     var moment_created = moment(created).format("dddd, MMMM Do YYYY, h:mm:ss a");
     $(el).html(moment(created).fromNow(false));
@@ -22,7 +22,7 @@ var datetime_update = function() {
 function stop_timer_and_submit(e)
 {
   e.preventDefault();
-  $(this).parent().siblings().children('.datetime').addClass('stopped');
+  // $(this).parent().siblings().children('.datetime').addClass('stopped');
   $(this).parent().parent().addClass('notified');
   $(this).parent().siblings('form').submit();
 }
