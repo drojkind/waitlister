@@ -6,7 +6,7 @@
   %th Msg
   %th Text
   %th Text Sent
-  - @reservationswaiting.each do |reservation|
+  - @reservationsnotseated.each do |reservation|
     = content_tag_for(:tr, reservation) do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
         %td
