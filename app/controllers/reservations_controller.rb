@@ -24,7 +24,6 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
-    binding.pry
     name = params[:first]
     body = params[:body]
     reservation = Reservation.where(:name => name).first
