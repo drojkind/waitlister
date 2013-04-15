@@ -23,11 +23,13 @@ class ReservationsController < ApplicationController
   end
 
   def sendtext
+    binding.pry
     name = params[:first]
     body = params[:body]
     reservation = Reservation.where(:name => name).first
     reservation.is_texted = true
     reservation.is_waiting = false
+    reservation.act_wait= params[:now].to_s[10..12].to_i
     reservation.save
     client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
     client.account.sms.messages.create(:from => '17324126143', :to => reservation.phone, :body => body)

@@ -19,6 +19,8 @@
           = hidden_field_tag('first', reservation.name)
         %td
           .datetime{:'data-created' => reservation.created_at}
+            -if reservation.act_wait != 0
+              =reservation.act_wait
         %td
           = text_area_tag('body', nil, :rows => 3 )
         %td
