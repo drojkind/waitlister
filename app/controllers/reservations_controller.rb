@@ -23,8 +23,12 @@ class ReservationsController < ApplicationController
     @reservationswaiting= @auth.reservations.where(:is_waiting => true)
   end
 
-  def sendtext
+  def seated
     binding.pry
+    @auth.reservation.find(:phone=> params[:phone]).is_seated = true
+  end
+
+  def sendtext
     name = params[:first]
     body = params[:body]
     reservation = Reservation.where(:name => name).first

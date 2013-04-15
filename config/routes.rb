@@ -14,6 +14,7 @@ R20130326Waitlist::Application.routes.draw do
   resources :reservations do
     member do
       post 'sendtext'
+      post 'seated'
     end
   end
 end
