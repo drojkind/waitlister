@@ -7,7 +7,7 @@
   %th Text
   %th Arrived
   - @reservationswaiting.each do |reservation|
-    = content_tag_for(:tr, reservation) do
+    = content_tag_for(:tr, reservation, class: "#{reservation.is_texted ? 'notified' : ''}") do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
         %td
           = label_tag reservation.name
@@ -22,6 +22,6 @@
         %td
           = text_area_tag('body', nil, :rows => 3 )
         %td
-          = submit_tag('Send Text')
+          = submit_tag('Send Text', :disabled => reservation.is_texted)
         %td
-          = button_tag("Seat")
+          = button_tag("Seat", :disabled => !reservation.is_texted)
