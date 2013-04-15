@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
     #@reservationswaiting= Reservation.waiting  why doesn't this work--- from scope?
     @reservationstexted= @auth.reservations.where(:is_texted => true)
     @reservationsseated= @auth.reservations.where(:is_seated => true)
+    @reservation = Reservation.new
   end
 
   def new

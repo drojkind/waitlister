@@ -1,3 +1,10 @@
 #form
 %br
 = image_tag('screen.png', :id => 'home')
+#myModal.reveal-modal
+  %h2 Login
+  = render(:partial => 'session/form')
+
+#myModal2.reveal-modal
+  %h2 Register
+  = render(:partial => 'users/form')

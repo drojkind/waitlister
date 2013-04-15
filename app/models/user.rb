@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def total_people
-    Reservation.all.map(&:party_size).reduce(:+)
+    self.reservations.map(&:party_size).reduce(:+)
   end
 
   def total_parties
-    Reservation.all.count
+    self.reservations.count
   end
 
 end

@@ -1,13 +1,11 @@
-.row
-  .large-12.small-12.columns
-    = form_for @reservation, :remote => true do |f|
-      = f.label :name
-      = f.text_field :name
-      = f.label :phone
-      = f.text_field :phone
-      = f.label :party_size
-      = f.text_field :party_size, :autofocus => true
-      = f.label :est_wait
-      = f.text_field :est_wait
-      = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button tiny radius alert')
-      = f.submit 'Create Reservation', :id => 'create_reservation_button', :class => 'button radius tiny'
+= form_for @reservation, :remote => true do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :phone
+  = f.text_field :phone
+  = f.label :party_size
+  = f.text_field :party_size, :autofocus => true
+  = f.label :est_wait
+  = f.text_field :est_wait
+  = link_to('X', '#', :class => 'close-reveal-modal')
+  = f.submit 'Create Reservation', :id => 'create_reservation_button', :class => 'button radius tiny'

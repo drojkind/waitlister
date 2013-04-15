@@ -8,8 +8,8 @@ module ApplicationHelper
       nav += "<li>#{link_to(@auth.email, login_path, :method => :delete, remote: true)}</li>"
 
     else
-      nav += "<li>#{link_to('Register', new_user_path, remote: true)}</li>"
-      nav += "<li>#{link_to('Login', login_path, remote: true)}</li>"
+      nav += "<li>#{link_to('Register', "#", remote: true, :'data-reveal-id' => 'myModal2')}</li>"
+      nav += "<li>#{link_to('Login', '#', remote: true, :'data-reveal-id' => 'myModal')}</li>"
     end
   end
 end
