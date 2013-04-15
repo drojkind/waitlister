@@ -10,6 +10,7 @@
 #  party_size :integer          default(0)
 #  est_wait   :integer          default(0)
 #  act_wait   :integer          default(0)
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  is_waiting :boolean
