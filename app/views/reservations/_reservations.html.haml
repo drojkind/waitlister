@@ -5,6 +5,7 @@
   %th Act Wait
   %th Msg
   %th Text
+  %th Text Sent
   - @reservationswaiting.each do |reservation|
     = content_tag_for(:tr, reservation) do
       =form_tag sendtext_reservation_path(reservation), :remote => true do
@@ -22,3 +23,5 @@
           = text_area_tag('body', nil, :rows => 3 )
         %td
           = submit_tag('Send Text')
+        %td
+          = check_box_tag("texted")
