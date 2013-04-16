@@ -24,7 +24,11 @@ class ReservationsController < ApplicationController
   end
 
   def seated
-    @auth.reservation.find(:phone=> params[:phone]).is_seated = true
+    reservation = @auth.reservations.find(params[:id])
+    reservation.is_seated = true
+    reservation.is_waiting = false
+    reservation.save
+    @reservationsseated= @auth.reservations.where(:is_seated => true)
   end
 
   def sendtext

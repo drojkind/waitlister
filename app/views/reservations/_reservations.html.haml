@@ -26,4 +26,4 @@
         %td
           = submit_tag('Send Text', :disabled => reservation.is_texted)
         %td
-          = button_tag('Seat', :disabled => !reservation.is_texted)
+          = link_to('Seat', seated_reservation_path(reservation), :remote => true, :method => :post, :disabled => !reservation.is_texted)
