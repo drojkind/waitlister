@@ -24,7 +24,6 @@ class ReservationsController < ApplicationController
   end
 
   def seated
-    binding.pry
     @auth.reservation.find(:phone=> params[:phone]).is_seated = true
   end
 
