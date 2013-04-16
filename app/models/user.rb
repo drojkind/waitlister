@@ -16,13 +16,23 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_secure_password
 
-  def total_people
-    self.reservations.map(&:party_size).reduce(:+)
+  def waiting_total_people
+    self.reservations.where(:is_waiting => true).map(&:party_size).reduce(:+) + self.reservations.where(:is_texted => true).map(&:party_size).reduce(:+)
   end
 
-  def total_parties
-    self.reservations.count
+  def waiting_total_parties
+    self.reservations.where(:is_waiting => true).count + self.reservations.where(:is_texted => true).count
   end
+
+  def seated_total_people
+    self.reservations.where(:is_seated => true).map(&:party_size).reduce(:+)
+  end
+
+  def seated_total_parties
+    self.reservations.where(:is_seated => true).count
+  end
+
+
 
 end
 

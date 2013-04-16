@@ -69,6 +69,8 @@ h2
   background-color: black;
   overflow: scroll;
   color: white;
+  vertical-align: true;
+  margin-top: -25px;
 }
 
 #forms tr.reservation.notified
@@ -76,8 +78,27 @@ h2
   background-color: gray;
 }
 
+.waiting
+{
+  width: 350px;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
 
-
+.seated
+{
+  width: 350px;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
 
 
 
