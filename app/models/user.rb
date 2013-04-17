@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     self.reservations.where(:is_seated => true).count
   end
 
+  def date_graph
+    dates = self.reservations.map(&:date).uniq
+    dates.map{ |date| {date: date, avg_est_wait: Reservation.avg_est_wait(self, date), avg_act_wait: Reservation.avg_act_wait(self, date)} }
+  end
 
 
 end
