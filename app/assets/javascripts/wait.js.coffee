@@ -6,12 +6,5 @@ class Home
     e.preventDefault()
     $('#form').empty()
 $(document).ready(Home.document_ready)
-# class Timer
-#   start: (e) ->
-#   count = parseInt $('.datetime').val()
-#   clearInterval(timer)
-#   timer = setInterval(clock, 1000)
-#   clock: ->
-#   counter++
-#   $('#timer').text(counter)
+
 

@@ -24,6 +24,6 @@
         %td
           = text_area_tag('body', nil, :rows => 3 )
         %td
-          = submit_tag('Send Text', :disabled => reservation.is_texted)
+          = button_tag('Send Text', :id => 'snd_txt', :disabled => reservation.is_texted)
         %td
           = link_to('Seat', seated_reservation_path(reservation), :remote => true, :method => :post, :class => 'button tiny radius success',:disabled => !reservation.is_texted)
