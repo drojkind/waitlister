@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410235528) do
+ActiveRecord::Schema.define(:version => 20130418132128) do
 
   create_table "reservations", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20130410235528) do
     t.boolean  "is_waiting"
     t.boolean  "is_texted"
     t.boolean  "is_seated"
+  end
+
+  create_table "sms", :force => true do |t|
+    t.string   "content_received"
+    t.string   "incoming_number"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|

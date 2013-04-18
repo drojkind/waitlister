@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  phone      :string(255)
+#  date       :string(255)
+#  day        :string(255)
+#  party_size :integer          default(0)
+#  est_wait   :integer          default(0)
+#  act_wait   :integer          default(0)
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  is_waiting :boolean
+#  is_texted  :boolean
+#  is_seated  :boolean
+#
+
 require 'spec_helper'
 
 describe Reservation do
