@@ -45,11 +45,11 @@ function process_activity(timedata)
 {
   $('#chart').empty();
 
-  Morris.Area({
+  Morris.Line({
     element: 'chart',
     data: timedata,
     xkey: 'date',
-    ykeys: ['act_wait', 'est_wait'],
+    ykeys: ['avg_est_wait', 'avg_act_wait'],
     labels: ['Actual', 'Estimated']
   });
 }

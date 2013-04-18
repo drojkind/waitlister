@@ -24,4 +24,15 @@ class Reservation < ActiveRecord::Base
   scope :texted, where(:is_texted => true).where(:is_seated => false)
   scope :seated, where(:is_seated => true)
   belongs_to :user
+
+  def self.avg_est_wait(user, date)
+    reservations = user.reservations.where(:date => date)
+    (reservations.map(&:est_wait).reduce(:+))/(reservations.count)
+  end
+
+  def self.avg_act_wait(user, date)
+    reservations = user.reservations.where(:date => date)
+    (reservations.map(&:act_wait).reduce(:+))/(reservations.count)
+  end
+
 end

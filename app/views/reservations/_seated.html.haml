@@ -15,4 +15,5 @@
           = hidden_field_tag('phone', reservation.phone)
           = hidden_field_tag('first', reservation.name)
         %td
+          = label_tag reservation.act_wait
           .datetime{:'data-created' => reservation.created_at}
