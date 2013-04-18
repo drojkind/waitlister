@@ -17,19 +17,11 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def waiting_total_people
-    if self.reservations.present?
-      self.reservations.where(:is_waiting => true).map(&:party_size).reduce(:+) + self.reservations.where(:is_texted => true).map(&:party_size).reduce(:+)
-    else
-      return 0
-    end
+    (self.reservations.where(:is_waiting => true).map(&:party_size).reduce(:+)) + (self.reservations.where(:is_texted => true).map(&:party_size).reduce(:+))
   end
 
   def waiting_total_parties
-    if self.reservations.present?
-    self.reservations.where(:is_waiting => true).count + self.reservations.where(:is_texted => true).count
-    else
-      return 0
-    end
+    (self.reservations.where(:is_waiting => true).count) + (self.reservations.where(:is_texted => true).count)
   end
 
   def seated_total_people
