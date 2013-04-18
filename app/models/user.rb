@@ -37,6 +37,20 @@ class User < ActiveRecord::Base
     dates.map{ |date| {date: date, avg_est_wait: Reservation.avg_est_wait(self, date), avg_act_wait: Reservation.avg_act_wait(self, date)} }
   end
 
+  def avg_wait_four
+    times = self.reservations.where(:party_size => 1..4).map(&:act_wait).reduce(:+)
+    times / (self.reservations.where(:party_size => 1..4).count)
+  end
+
+  def avg_wait_eight
+    times = self.reservations.where(:party_size => 5..8).map(&:act_wait).reduce(:+)
+    times / (self.reservations.where(:party_size => 5..8).count)
+  end
+
+  def avg_wait_big
+    times = self.reservations.where(:party_size => 9..200).map(&:act_wait).reduce(:+)
+    times / (self.reservations.where(:party_size => 9..200).count)
+  end
 
 end
 

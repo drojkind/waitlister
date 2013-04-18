@@ -21,11 +21,11 @@ class UsersController < ApplicationController
   end
 
   def waiting
-    @reservationswaiting= @auth.reservations.where(:is_seated => nil)
+    @reservationswaiting = @auth.reservations.where(:is_seated => nil)
   end
 
   def seated
-    @reservationsseated= @auth.reservations.where(:is_seated => true)
+    @reservationsseated = @auth.reservations.where(:is_seated => true)
   end
 
 end
