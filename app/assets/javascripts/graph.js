@@ -6,7 +6,7 @@ $(function(){
   datetime_update();
   setInterval(datetime_update, 8000);
   // set up event listener, when someone clicks on input of type submit inside of class "reservation", do this js function that will prevent default, stop timer, then submit the form
-  $('.reservation').on('click','#snd_txt', stop_timer_and_submit)
+  $('.reservation').on('click','#snd_txt', stop_timer_and_submit);
 });
 var datetime = null;
 var date = null;
@@ -16,7 +16,7 @@ var datetime_update = function() {
     var created = Date.parse($(this).data('created'));
     var moment_created = moment(created).format("dddd, MMMM Do YYYY, h:mm:ss a");
     $(el).html(moment(created).fromNow(false));
-  })
+  });
 };
 
 function stop_timer_and_submit(e)

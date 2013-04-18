@@ -1,20 +1,44 @@
 %div.waiting
-  - if @auth.present?
-    Total Waiting
-    %br
-    Number of Guests
-    = @auth.waiting_total_people
-    %br
-    Number of Parties
-    = @auth.waiting_total_parties
+	- if @auth.present?
+		Total Waiting
+		%br
+		Number of Guests
+		= @auth.waiting_total_people
+		%br
+		Number of Parties
+		= @auth.waiting_total_parties
 %div.seated
-  - if @auth.present?
-    Total Seated
-    %br
-    Number of Guests
-    = @auth.seated_total_people
-    %br
-    Number of Parties
-    = @auth.seated_total_parties
+	- if @auth.present?
+		Total Seated
+		%br
+		Number of Guests
+		= @auth.seated_total_people
+		%br
+		Number of Parties
+		= @auth.seated_total_parties
+%div.avg_wait_four
+	- if @auth.present?
+		Average Waiting Time
+		%br
+		1 - 4
+		%br
+		= @auth.avg_wait_four
+		mins
+%div.avg_wait_eight
+	- if @auth.present?
+		Average Waiting Time
+		%br
+		5 - 8
+		%br
+		= @auth.avg_wait_eight
+		mins
+%div.avg_wait_big
+	- if @auth.present?
+		Average Waiting Time
+		%br
+		8 +
+		%br
+		= @auth.avg_wait_big
+		mins
 
 

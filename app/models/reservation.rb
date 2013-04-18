@@ -35,4 +35,16 @@ class Reservation < ActiveRecord::Base
     (reservations.map(&:act_wait).reduce(:+))/(reservations.count)
   end
 
+  # def avg_act_wait_party_four
+  #   (self.where(:party_size => 1..4).map(&:act_wait).reduce(:+))/(reservations.count)
+  # end
+
+  # def avg_act_wait_party_eight
+  #   (self.where(:party_size => 5..8).map(&:act_wait).reduce(:+))/(reservations.count)
+  # end
+
+  # def avg_act_wait_party_big
+  #   (self.where(:party_size => 9..200).map(&:act_wait).reduce(:+))/(reservations.count)
+  # end
+
 end
