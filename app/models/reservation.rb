@@ -45,8 +45,8 @@ class Reservation < ActiveRecord::Base
 
   def avg_act_wait_party_big
     bigparty = self.reservations.where("party_size > ?", 9)
-    if biparty.present?
-      biparty.map(&:act_wait).reduce(:+)/(reservations.count)
+    if bigparty.present?
+      bigparty.map(&:act_wait).reduce(:+)/(reservations.count)
     else
       return 0
     end
