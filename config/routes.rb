@@ -17,4 +17,5 @@ R20130326Waitlist::Application.routes.draw do
       post 'seated'
     end
   end
+  post '/sms' => 'sms#receive'
 end
