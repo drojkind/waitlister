@@ -1,4 +1,6 @@
 = form_for @reservation, :remote => true do |f|
+  = f.label :date
+  = f.text_field :date
   = f.label :name
   = f.text_field :name
   = f.label :phone
