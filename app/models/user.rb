@@ -38,14 +38,27 @@ class User < ActiveRecord::Base
   end
 
   def avg_wait_four
-    times = self.reservations.where(:party_size => 1..4).map(&:act_wait).reduce(:+)
-    times / (self.reservations.where(:party_size => 1..4).count)
+    party = self.reservations.where(:party_size => 1..4)
+    times = party.map(&:act_wait).reduce(:+)
+    if party.present?
+      times / party.count
+    else
+      return 0
+    end
   end
 
   def avg_wait_eight
-    times = self.reservations.where(:party_size => 5..8).map(&:act_wait).reduce(:+)
-    times / (self.reservations.where(:party_size => 5..8).count)
+    party = self.reservations.where(:party_size => 5..8)
+    times = party.map(&:act_wait).reduce(:+)
+    if party.present?
+      times / party.count
+    else
+      return 0
+    end
   end
+    # times = self.reservations.where(:party_size => 5..8).map(&:act_wait).reduce(:+)
+    # times / (self.reservations.where(:party_size => 5..8).count)
+
 
   def avg_wait_big
     bigparty = self.reservations.where("party_size > ?", 9)
