@@ -15,7 +15,7 @@ It currently features --
   b. New notifying system - a text gets sent out when the guest table is ready. So the guests do not have to wait around to be seated.
   c. Two way messaging - receiving texts from guests is possible. Good way to collect reviews, comments and compliants.
 
-- Built on Ruby on Rails using Postgresql
+- Built on Ruby on Rails using PostgreSQL
 
 Future Iterations --
 
