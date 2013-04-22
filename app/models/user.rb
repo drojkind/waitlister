@@ -18,9 +18,9 @@ class User < ActiveRecord::Base
 
   def waiting_total_people
     tpeople = (self.reservations.where(:is_texted => true).map(&:party_size).reduce(:+))
-    tpeople = 0 if tpeople.nil?
+    0 if tpeople.nil?
     wpeople = (self.reservations.where(:is_waiting => true).map(&:party_size).reduce(:+))
-    wpeople = 0 if wpeople.nil?
+    0 if wpeople.nil?
     wpeople + tpeople
   end
 
