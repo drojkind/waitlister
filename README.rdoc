@@ -27,7 +27,7 @@ Sincerely,
 
 Stephen Bae & Matt Galvin
 
-::Contact::
+::Contact::::
 Stephen Bae - http://www.stephenbae.com, https://github.com/donoage
 Matt Galvin - https://github.com/mattjg908
 
