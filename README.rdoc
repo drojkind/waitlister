@@ -5,17 +5,17 @@ Nutini is a Restaurant Waitline Management App.
 
 It currently features --
 
-1. Helps populate useful data for restaurants
+- Helps populate useful data for restaurants
   a. Average wait times VS estimated wait times.
   b. Calculates average wait times for different sized parties.
   c. And Nutini is naturally a data collector for guests.
 
-2. Queueing Made Easy
+- Queueing Made Easy
   a. Makes reservations easy with only several lines to fill out as the guests come in.
   b. New notifying system - a text gets sent out when the guest table is ready. So the guests do not have to wait around to be seated.
   c. Two way messaging - receiving texts from guests is possible. Good way to collect reviews, comments and compliants.
 
-3. Built on Ruby on Rails using Postgresql
+- Built on Ruby on Rails using Postgresql
 
 Future Iterations --
 
@@ -24,6 +24,7 @@ Future Iterations --
 
 
 Sincerely,
+
 Stephen Bae & Matt Galvin
 
 ::Contact::
