@@ -20,10 +20,10 @@
         %td
           .datetime{:'data-created' => reservation.created_at}
             -if reservation.act_wait != 0
-              =reservation.act_wait
+              = reservation.act_wait
         %td
           = text_area_tag('body', nil, :rows => 3 )
         %td
-          = button_tag('Send Text', :id => 'snd_txt', :disabled => reservation.is_texted)
+          = button_tag('Send Text', :id => 'snd_txt', :disabled => reservation.is_texted, :class => 'button tiny radius')
         %td
           = link_to('Seat', seated_reservation_path(reservation), :remote => true, :method => :post, :class => 'button tiny radius success',:disabled => !reservation.is_texted)

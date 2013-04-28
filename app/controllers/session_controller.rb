@@ -9,7 +9,6 @@ class SessionController < ApplicationController
     else
       session[:user_id] = nil
     end
-
     authenticate
   end
 
